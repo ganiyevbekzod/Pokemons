@@ -8,7 +8,7 @@ function wiew(Array,node) {
   node.innerHTML='';
   for(pokemonn of Array){
     var newItem=document.createElement('li');
-    newItem.setAttribute("class","col-sm col-md-6 col-lg-4 title text-light text-center w-25 m-5 border  border-danger");
+    newItem.setAttribute("class","col-sm-12 col-md-6 col-lg-4 title text-light text-center border border-danger");
     node.appendChild(newItem);
   
     var newId=document.createElement('h4');
