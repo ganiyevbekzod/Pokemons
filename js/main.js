@@ -8,7 +8,7 @@ function wiew(Array,node) {
   node.innerHTML='';
   for(pokemonn of Array){
     var newItem=document.createElement('li');
-    newItem.setAttribute("class","col-sm-12 col-md-6 col-lg-4 title text-light text-center border border-danger");
+    newItem.setAttribute("class","mb-5 col-sm-12 col-md-6 col-lg-4 title text-light text-center border border-danger");
     node.appendChild(newItem);
   
     var newId=document.createElement('h4');
@@ -57,33 +57,18 @@ elSelect.addEventListener("change",function(){
   }else{
   wiew(pokemons,elList)}
 })
+// let newSet=new Set();
+
+// pokemons.forEach((item) =>{
+//   item.type.forEach((type) =>{
+//     Array.push(type)
+//   })
+// })
 
 
-// var sortPokemonsTypes = new Set(pokemonsTypes);
-
-// sortPokemonsTypes.forEach((el) => {
-//   elOption = document.createElement("option");
-//   elSelect.appendChild(elOption);
-
-//   elOption.setAttribute("value", el);
-//   elOption.textContent = el;
+// newSet.forEach((type) =>{
+//   let newOption=document.createElement('option');
+//   newOption.value=type;
+//   newOption.textContent=type;
+//   elSelect.appendChild(newOption);
 // });
-
-// elSelect.addEventListener("change", (evt) => {
-//   evt.preventDefault();
-
-//   sortPokemons = [];
-
-//   pokemons.forEach((poc) => {
-//     poc.type.forEach((pocType) => {
-//       if (elSelect.value == "All") {
-//         sortPokemons = pokemons;
-//       }
-//       if (elSelect.value == pocType) sortPokemons.push(poc);
-//     });
-//   });
-
-//   createCardListItem(sortPokemons, elList);
-// });
-
-// createCardListItem(pokemons, elList);
