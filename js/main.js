@@ -1,6 +1,7 @@
 var elBody = document.querySelector("body");
 var elList = document.querySelector(".js-list");
 var elSelect=document.querySelector(".js-select")
+var elSelect2=document.querySelector(".js-select2")
 var elOption=document.querySelector(".js-option")
 let elForm=document.querySelector(".js-form");
 let elInput=document.querySelector(".js-input");
@@ -90,3 +91,37 @@ elSelect.addEventListener("change",function(){
     });
     console.log(newArr);
   });
+
+
+  //SORT
+
+  var newsorte = []
+
+  elSelect2.addEventListener('change',function(){
+    newsorte = []
+    elList.innerHTML = ''
+  
+  pokemons.forEach((els)=>{
+    newsorte.push(els)
+    newsorte.sort((a,b)=> 
+    a.name.toLocaleLowerCase().charCodeAt(0) - 
+    b.name.toLocaleLowerCase().charCodeAt(0))
+  
+  })
+  
+  if(elSelect2.value == 'a-z'){
+  
+    newsorte.sort((a,b)=> 
+    a.name.toLocaleLowerCase().charCodeAt(0) - 
+    b.name.toLocaleLowerCase().charCodeAt(0))
+    wiew(newsorte,elList)
+  }
+  
+  if(elSelect2.value == 'z-a'){
+    
+    newsorte.sort((a,b)=>
+    b.name.toLocaleLowerCase().charCodeAt(0) - 
+    a.name.toLocaleLowerCase().charCodeAt(0))
+    wiew(newsorte,elList)
+  }
+  })
