@@ -1,11 +1,11 @@
-var elBody = document.querySelector("body");
+
 var elList = document.querySelector(".js-list");
 var elSelect=document.querySelector(".js-select")
 var elSelect2=document.querySelector(".js-select2")
 var elOption=document.querySelector(".js-option")
 let elForm=document.querySelector(".js-form");
 let elInput=document.querySelector(".js-input");
-elBody.style.background="linear-gradient(72.67deg, #1A1822 2.78%, #9040E3 173.27%), #6B50FF";
+let ElDarkmode=document.querySelector(".js-dark")
 
 
 
@@ -13,7 +13,7 @@ function wiew(Array,node) {
   node.innerHTML='';
   for(pokemonn of Array){
     var newItem=document.createElement('li');
-    newItem.setAttribute("class","mb-5 col-sm-12 col-md-6 col-lg-4 title text-light text-center border border-danger");
+    newItem.setAttribute("class","mb-5 col-sm-12 col-md-6 col-lg-4 title text-center border border-danger");
     node.appendChild(newItem);
     
     var newId=document.createElement('h4');
@@ -27,7 +27,7 @@ function wiew(Array,node) {
     
     var newText=document.createElement('h4');
     newText.textContent=`${pokemonn.name}`;
-    newText.setAttribute("class","title text-light");
+    newText.setAttribute("class","title ");
     newItem.appendChild(newText);
     
     var newWeight=document.createElement('h4');
@@ -125,3 +125,24 @@ elSelect.addEventListener("change",function(){
     wiew(newsorte,elList)
   }
   })
+
+
+
+  // darkmode
+let theme=false
+ElDarkmode.addEventListener("click",function (){
+    theme=!theme
+    const bg=theme ? "dark" :"light";
+    window.localStorage.setItem("theme",bg)
+    changeTheme()
+});
+function changeTheme() {
+    if(window.localStorage.getItem("theme")=="dark"){
+        document.body.classList.add("dark");
+    }
+  
+    else{
+        document.body.classList.remove("dark");
+    }
+    changeTheme()
+}
